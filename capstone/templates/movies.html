@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Movies{% endblock %}
+
+{% block content %}
+<div class="title-bar">
+<h2>Movies</h2>
+<a href="{{ url_for('tracker.tracker') }}" class="user-menu-button">View Movie Tracker</a>
+</div>
+
+<ul style="margin-top: 20px;">
+    {% for movie in movies %}
+        <li>{{ movie.Title }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

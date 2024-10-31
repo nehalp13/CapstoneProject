@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>{% block title %}Movie Tracker{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1>Movie Tracker</h1>
+        {% if user %}
+        <p>Welcome, {{ user.Username }}! 
+            <a href="{{ url_for('tracker.tracker') }}">Your Tracker</a> | 
+            <a href="{{ url_for('user_menu.user_menu') }}">User Menu</a> |
+            <a href="{{ url_for('search.search') }}">Add Movies to your Tracker</a> |
+            <a href="{{ url_for('home.home') }}">View Movies</a> |
+            <a href="{{ url_for('auth.logout') }}">Logout</a>
+        </p>
+        {% endif %}
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2024 Movie Tracker</p>
+    </footer>
+</body>
+</html>

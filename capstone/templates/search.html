@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %}Search Movies{% endblock %}
+
+{% block content %}
+<div class="title-bar">
+    <h2>Search Movies</h2>
+    <a href="/user_menu" class="user-menu-button">User Menu</a>
+</div>
+
+<form action="/search" method="GET">
+    <label for="search_option">Search by:</label>
+    <select name="search_option" id="search_option">
+        <option value="1">Title</option>
+        <option value="2">Genre</option>
+    </select>
+    <input type="text" name="query" required>
+    <button type="submit">Search</button>
+</form>
+
+{% if movies %}
+<h3>Search Results:</h3>
+<div style="display: flex; flex-wrap: wrap; gap: 20px;">
+    {% for movie in movies %}
+    <div style="display: flex; width: 100%; border-bottom: 1px solid #ddd; padding: 10px;">
+        <!-- Movie Details -->
+        <div style="flex: 2; padding-right: 20px;">
+            <strong>{{ movie.Title }}</strong> (Genre: {{ movie.genre.Genre if movie.genre else 'Unknown Genre' }})
+            <form action="/add_to_tracker" method="POST" style="margin-top: 10px;">
+                <input type="hidden" name="movie_id" value="{{ movie.MovieID }}">
+                <label for="status_{{ movie.MovieID }}">Select status:</label>
+                <select name="status" id="status_{{ movie.MovieID }}" required>
+                    <option value="not yet completed">Not yet completed</option>
+                    <option value="in-progress">In-progress</option>
+                    <option value="completed">Completed</option>
+                </select>
+                <button type="submit">Add to Tracker</button>
+            </form>
+        </div>
+        <!-- Movie Image -->
+        <div style="flex: 1; display: flex; align-items: center;">
+            {% if movie.ImageUrl %}
+                <img src="{{ movie.ImageUrl }}" alt="{{ movie.Title }}" style="max-width: 100%; max-height: 150px; object-fit: cover;">
+            {% else %}
+                <p>No Image Available</p>
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+<!-- templates/search.html -->
+{% if error %}
+    <p style="color: red;">{{ error }}</p>
+{% endif %}
+
+{% endblock %}

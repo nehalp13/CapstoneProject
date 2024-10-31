@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Update Movie Status{% endblock %}
+
+{% block content %}
+<div class="title-bar">
+    <h2>Update Movie Status</h2>
+    <a href="{{ url_for('tracker.tracker') }}" class="user-menu-button">View Movie Tracker</a>
+</div>
+
+<form action="{{ url_for('tracker.update_status') }}" method="POST">
+    <label for="movie_title">Enter the movie title to update:</label>
+    <input type="text" name="movie_title" required>
+
+    <label for="status">Select new status:</label>
+    <select name="status" required>
+        <option value="not yet completed">Not yet completed</option>
+        <option value="in-progress">In-progress</option>
+        <option value="completed">Completed</option>
+    </select>
+
+    <button type="submit">Update Status</button>
+</form>
+
+{% if message %}
+    <p style="color: green;">{{ message }}</p>
+{% elif error %}
+    <p style="color: red;">{{ error }}</p>
+{% endif %}
+{% endblock %}

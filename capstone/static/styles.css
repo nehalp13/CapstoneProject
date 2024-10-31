@@ -1,0 +1,409 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Global Styles */
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background: linear-gradient(135deg, #1f1f1f, #333);
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    color: #e67e22;
+    font-weight: 700;
+}
+
+header nav a {
+    color: #e0e0e0;
+    margin-left: 1rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    color: #e67e22;
+}
+
+/* Main Content */
+main {
+    flex: 1;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: auto;
+    width: 95%;
+}
+
+/* Section Titles */
+h2 {
+    color: #e67e22;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    /* border-bottom: 2px solid #444; */
+    padding-bottom: 0.3rem;
+}
+
+/* Form Styles */
+form {
+    background: #1c1c1c;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    margin-bottom: 2rem;
+    max-width: 600px;
+}
+
+form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #e67e22;
+}
+
+form input[type="text"],
+form input[type="password"],
+form select,
+button {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1.2rem;
+    border-radius: 6px;
+    border: none;
+    background: #333;
+    color: #e0e0e0;
+    font-size: 1rem;
+}
+
+button {
+    background: #e67e22;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background: #d35400;
+    transform: scale(1.03);
+}
+/* For the table container to avoid overflow */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 1.5rem;
+    border-radius: 8px;
+    background: #1c1c1c;
+    padding: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Ensure table fits within container */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Cell and header styling */
+th, td {
+    padding: 1rem;
+    color: #e0e0e0;
+    vertical-align: middle; /* Aligns the button within the cell */
+}
+
+th {
+    background: #333;
+    font-weight: 600;
+    text-align: left;
+}
+
+tr:nth-child(even) {
+    background: #2a2a2a;
+}
+
+/* Delete Button Styling */
+.delete-form {
+    display: inline-block;
+    margin: 0;
+}
+
+.delete-button {
+    padding: 0.4rem 0.8rem;
+    color: #fff;
+    background-color: #e74c3c;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.delete-button:hover {
+    background-color: #c0392b;
+}
+
+/* Responsive Adjustment */
+@media (max-width: 768px) {
+    .table-container {
+        padding: 0.5rem;
+    }
+
+    th, td {
+        padding: 0.5rem;
+    }
+    
+    .delete-button {
+        font-size: 0.8rem; /* Smaller font for mobile view */
+        padding: 0.3rem 0.6rem;
+    }
+}
+
+/* Movie List and Tracker Styling */
+ul {
+    background: #1c1c1c;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 1.5rem;
+}
+
+ul li {
+    list-style: none;
+    padding: 0.8rem;
+    margin-bottom: 0.5rem;
+    background: #333;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+ul li:hover {
+    background: #444;
+}
+
+/* Status and Rating Display */
+.rating-stars {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+.rating-stars svg {
+    fill: #f4c542;
+    width: 1rem;
+    height: 1rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #1f1f1f;
+    color: #999;
+    font-size: 0.9rem;
+    box-shadow: 0px -3px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.4rem;
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    form, table, ul {
+        width: 100%;
+        padding: 1rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Button styling */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff;
+    border-radius: 6px;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.btn-secondary {
+    background-color: #28a745;
+}
+
+.btn-secondary:hover {
+    background-color: #218838;
+}
+/* Header Styles */
+header {
+    background-color: #222;  /* Dark charcoal background */
+    color: #f0f0f0;  /* Light grey text color */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-bottom: 3px solid #e67e22;  /* Accent border */
+}
+
+header h1 {
+    font-size: 2.8em;
+    font-weight: bold;
+    color: #e67e22;  /* Orange color for title */
+    margin: 0;
+}
+
+header p {
+    font-size: 1.1em;
+    margin: 15px 0 0;
+}
+
+header a {
+    color: #f0f0f0;  /* Warm gold for links to complement the orange */
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 12px;
+    transition: color 0.3s ease;
+}
+
+header a:hover {
+    color: #e67e22;  /* Matches title color on hover */
+}
+
+header p {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 8px;
+}
+
+
+
+
+
+/* User Menu Page */
+h2 {
+    color: #e67e22;  /* Orange title */
+    text-align: left;
+    font-size: 2.2em;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+ul li a {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 1.2em;
+    color: #f0f0f0;  /* Light text color */
+    background-color: #222;  /* Dark background for links */
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);  /* Subtle shadow for depth */
+}
+
+ul li a:hover {
+    background-color: #e67e22;  /* Orange background on hover */
+    color: #fff;  /* White text on hover */
+}
+
+ul li a:active {
+    background-color: #d35400;  /* Darker orange for active state */
+}
+
+/* Title and User Menu button container */
+.title-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #444;
+    padding-bottom: 0.3rem;
+}
+
+/* Title Styling */
+.title-bar h2 {
+    color: #e67e22;
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* User Menu Button Styling */
+.user-menu-button {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    background-color: #f0f0f0;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.user-menu-button:hover {
+    background-color: #e67e22;
+    color: #fff;
+}
+
+.user-menu-button:active {
+    background-color: #d35400;
+}
+
+.index h2 {
+    text-align: center;
+}

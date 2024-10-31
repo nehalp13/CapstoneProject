@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<h2>Login</h2>
+
+<form action="{{ url_for('auth.login') }}" method="POST">
+    <label for="username">Username:</label>
+    <input type="text" name="username" required>
+    <br>
+    
+    <label for="password">Password:</label>
+    <input type="password" name="password" id="password" required>
+    <button type="button" onclick="togglePasswordVisibility()">Show/Hide</button>
+    <br>
+    
+    <button type="submit">Login</button>
+</form>
+
+{% if error %}
+    <p style="color: red;">{{ error }}</p>
+{% endif %}
+
+<script>
+    function togglePasswordVisibility() {
+        const passwordField = document.getElementById("password");
+        passwordField.type = passwordField.type === "password" ? "text" : "password";
+    }
+</script>
+{% endblock %}
