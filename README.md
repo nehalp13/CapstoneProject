@@ -16,8 +16,8 @@ Follow these instructions to set up and run the application on your local machin
 #### 1. Clone the Repository
 To get started, clone the repository to your local machine using the following command:
 ```bash
-git clone https://github.com/Future-Horizons-Python-Sept-2024/pep-progress-tracker-nehalp13.git
-cd capstone
+git clone https://github.com/nehalp13/CapstoneProject.git
+cd CapstoneProject/capstone
 ```
 
 #### 2. Set Up the MySQL Database Structure
